@@ -55,18 +55,18 @@ export class DtTextArea extends DtFormBase {
           resize: none;
           width: 100%;
         }
-        input:disabled,
-        input::placeholder {
+        textarea:disabled,
+        textarea::placeholder {
           color: var(
-            --dt-text-placeholder-color,
+            --dt-textarea-placeholder-color,
             var(--dt-form-placeholder-color, #999)
           );
-          text-transform: var(--dt-text-placeholder-transform, none);
-          font-size: var(--dt-text-placeholder-font-size, 1rem);
-          font-weight: var(--dt-text-placeholder-font-weight, 400);
-          letter-spacing: var(--dt-text-placeholder-letter-spacing, normal);
+          text-transform: var(--dt-textarea-placeholder-transform, none);
+          font-size: var(--dt-textarea-placeholder-font-size, 1rem);
+          font-weight: var(--dt-textarea-placeholder-font-weight, 400);
+          letter-spacing: var(--dt-textarea-placeholder-letter-spacing, normal);
         }
-        input[readonly],
+        textarea[readonly],
         textarea:disabled,
         textarea[readonly] {
           background-color: var(

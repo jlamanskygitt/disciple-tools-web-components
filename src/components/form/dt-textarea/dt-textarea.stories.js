@@ -15,6 +15,7 @@ export default {
   argTypes: {
     id: { control: 'text' },
     name: { control: 'text' },
+    placeholder: { control: 'text' },
     label: { control: 'text' },
     value: { control: 'text' },
     disabled: { control: 'boolean' },
@@ -41,6 +42,7 @@ export default {
       id = 'name',
       name = 'field-name',
       label = 'Field Name',
+      placeholder = 'Enter text here...',
       value,
       disabled = false,
       readonly = false,
@@ -60,6 +62,7 @@ export default {
         id=${ifDefined(id)}
         name=${ifDefined(name)}
         label=${ifDefined(label)}
+        placeholder=${ifDefined(placeholder)}
         value=${ifDefined(value)}
         ?disabled=${disabled}
         ?readonly=${readonly}
