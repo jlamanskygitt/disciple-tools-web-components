@@ -9,7 +9,7 @@ describe('DtMultiTextGroups', () => {
     const el = await fixture(
       html`<dt-multi-text-groups 
         placeholder="Custom Placeholder"
-        .value=${[{ tempKey: 'new-key', group: 'default', value: '' }]}
+        .value=${[{ tempKey: 'new-key', type: 'default', value: '' }]}
         .groups=${[{ id: 'default', label: 'Default Group' }]}
       ></dt-multi-text-groups>`
     );
@@ -22,13 +22,13 @@ describe('DtMultiTextGroups', () => {
     const el = await fixture(
       html`<dt-multi-text-groups
         value="${JSON.stringify([{
-          key: 'cc01',
+          meta_id: 'cc01',
           value: 'Value 1',
-          group: 'one',
+          type: 'one',
         }, {
-          key: 'cc02',
+          meta_id: 'cc02',
           value: 'Value 2',
-          group: 'two',
+          type: 'two',
         }])}"
         groups="${JSON.stringify([{
           id: 'one',
@@ -56,11 +56,11 @@ describe('DtMultiTextGroups', () => {
         value="${JSON.stringify([{
           meta_id: 'cc01',
           value: 'Value 1',
-          group: 'one',
+          type: 'one',
         }, {
           meta_id: 'cc02',
           value: 'Value 2',
-          group: 'two',
+          type: 'two',
         }])}"
         groups="${JSON.stringify([{
           id: 'one',
@@ -89,13 +89,13 @@ describe('DtMultiTextGroups', () => {
     const el = await fixture(
       html`<dt-multi-text-groups
         value="${JSON.stringify([{
-          key: 'cc01',
+          meta_id: 'cc01',
           value: 'Value 1',
-          group: 'one',
+          type: 'one',
         }, {
-          key: 'cc02',
+          meta_id: 'cc02',
           value: 'Value 2',
-          group: 'two',
+          type: 'two',
         }])}"
         groups="${JSON.stringify([{
           id: 'one',
@@ -118,16 +118,16 @@ describe('DtMultiTextGroups', () => {
     expect(el.value.length).to.equal(2);
     
     expect(el.value).to.deep.include({
-      key: 'cc01',
+      meta_id: 'cc01',
       value: 'Value 1',
-      group: 'one',
+      type: 'one',
       delete: true,
     });
     
     expect(el.value).to.deep.include({
-      key: 'cc02',
+      meta_id: 'cc02',
       value: 'Value 2',
-      group: 'two',
+      type: 'two',
     });
 
     // not rendered in DOM
@@ -138,8 +138,8 @@ describe('DtMultiTextGroups', () => {
     const el = await fixture(
       html`<dt-multi-text-groups
         value="${JSON.stringify([{ 
-          tempKey: 'new-key',
-          group: 'default', 
+          meta_id: 'new-key',
+          type: 'default', 
           value: '' 
         }])}"
         groups="${JSON.stringify([{
@@ -174,13 +174,13 @@ describe('DtMultiTextGroups', () => {
     const el = await fixture(
       html`<dt-multi-text-groups
         value="${JSON.stringify([{
-          key: 'cc01',
+          meta_id: 'cc01',
           value: 'Value 1',
-          group: 'one',
+          type: 'one',
         }, {
-          key: 'cc02',
+          meta_id: 'cc02',
           value: 'Value 2',
-          group: 'two',
+          type: 'two',
         }])}"
         groups="${JSON.stringify([{
           id: 'one',

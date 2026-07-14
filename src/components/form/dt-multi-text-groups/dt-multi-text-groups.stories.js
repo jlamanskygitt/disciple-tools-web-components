@@ -126,18 +126,18 @@ export const EnteredValue = {
     value: [
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_1',
-        group: 'one',
+        meta_id: 'comm_channel_1',
+        type: 'one',
       },
       {
         value: 'Lorem Ipsum 2',
-        key: 'comm_channel_2',
-        group: 'two',
+        meta_id: 'comm_channel_2',
+        type: 'two',
       },
       {
         value: 'Lorem Ipsum 3',
-        key: 'comm_channel_3',
-        group: 'two',
+        meta_id: 'comm_channel_3',
+        type: 'two',
       },
     ],
   },
@@ -163,8 +163,8 @@ export const Disabled = {
     value: [
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
   }
@@ -180,18 +180,18 @@ export const ReadOnly = {
     value: [
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
       {
         value: 'Lorem Ipsu2',
-        key: 'comm_channel_2',
-        group: 'two'
+        meta_id: 'comm_channel_2',
+        type: 'two'
       },
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_3',
-        group: 'two'
+        meta_id: 'comm_channel_3',
+        type: 'two'
       }
     ],
   }
@@ -208,18 +208,18 @@ export const ReadOnlyDisabled = {
     value: [
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_2',
-        group: 'two'
+        meta_id: 'comm_channel_2',
+        type: 'two'
       },
       {
         value: 'Lorem Ipsum2',
-        key: 'comm_channel_3',
-        group: 'two'
+        meta_id: 'comm_channel_3',
+        type: 'two'
       }
     ],
   }
@@ -235,8 +235,8 @@ export const privateField = {
     value: [
       {
         value: 'Lorem Ipsum',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     privateLabel: 'This is a custom tooltip',
@@ -252,8 +252,8 @@ export const Loading = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     loading: true,
@@ -269,8 +269,8 @@ export const Saved = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     saved: true,
@@ -286,8 +286,8 @@ export const Error = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     error: 'Custom error message',
@@ -303,8 +303,8 @@ export const ErrorSlot = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     error: '[Should show link here]',
@@ -322,8 +322,8 @@ export const BasicForm = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
   },
@@ -339,8 +339,8 @@ export const Required = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     required: true,
@@ -356,8 +356,8 @@ export const requiredCustomMessage = {
     value: [
       {
         value: '',
-        key: 'comm_channel_1',
-        group: 'one'
+        meta_id: 'comm_channel_1',
+        type: 'one'
       },
     ],
     required: true,
@@ -378,8 +378,8 @@ export const LocalizeRTL = {
     value: [
       {
         value: 'راد أن يشع',
-        key: 'comm_channel_1',
-        group: 'one',
+        meta_id: 'comm_channel_1',
+        type: 'one',
       },
     ],
   },
