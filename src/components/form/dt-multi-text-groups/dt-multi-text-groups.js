@@ -134,8 +134,6 @@ export class DtMultiTextGroups extends DtMultiText {
   }
 
   _addItem(group) {
-    console.log(group);
-    console.log(this.value);
     const newValue = {
       verified: false,
       value: '',
@@ -163,7 +161,6 @@ export class DtMultiTextGroups extends DtMultiText {
 
   _removeItem(e) {
     const keyToRemove = e.currentTarget.dataset.key;
-    console.log(e.currentTarget.dataset);
     if (keyToRemove) {
       const event = new CustomEvent('change', {
         bubbles: true,
