@@ -9,6 +9,12 @@ class DtChurchHealthIcon extends DtBase {
         display: block;
       }
       .health-item {
+        /* Fill the square icon slot so percentage-based child heights
+           resolve against a definite height (rather than collapsing to
+           auto, which let tall SVGs overflow). */
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
         padding: 0.5rem;
 
         img,
@@ -18,6 +24,9 @@ class DtChurchHealthIcon extends DtBase {
         }
 
         img {
+          /* Constrain the image to its square slot while preserving the
+             icon's aspect ratio, so non-square SVGs don't overflow. */
+          object-fit: contain;
           /* remove color from images and then semi-transparent */
           filter: grayscale(1) opacity(0.75);
         }

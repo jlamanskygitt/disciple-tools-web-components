@@ -63,6 +63,30 @@ const ChurchHealthEmptyGroup = {
   name: 'Home Church',
 };
 
+// Helper to build inline SVG data URIs for testing icon sizing/overflow.
+// Each SVG intentionally uses a large viewBox with a distinct aspect ratio
+// (wide, tall, square) so we can verify the icon is constrained to its
+// square container instead of overflowing.
+const svgDataUri = svg => `data:image/svg+xml,${encodeURIComponent(svg)}`;
+
+const wideSvg = svgDataUri(`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+    <rect x="2" y="2" width="396" height="96" fill="#e57373" stroke="#000" stroke-width="4"/>
+    <text x="200" y="65" font-size="48" text-anchor="middle" fill="#000">WIDE</text>
+  </svg>`);
+
+const tallSvg = svgDataUri(`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 400">
+    <rect x="2" y="2" width="96" height="396" fill="#64b5f6" stroke="#000" stroke-width="4"/>
+    <text x="50" y="205" font-size="34" text-anchor="middle" fill="#000" transform="rotate(90 50 200)">TALL</text>
+  </svg>`);
+
+const squareSvg = svgDataUri(`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <rect x="4" y="4" width="492" height="492" fill="#81c784" stroke="#000" stroke-width="8"/>
+    <text x="250" y="285" font-size="90" text-anchor="middle" fill="#000">SQ</text>
+  </svg>`);
+
 const options = {
   church_baptism: {
     label: 'Baptism',
@@ -198,6 +222,49 @@ export const Incomplete = {
 export const Filled = {
   args: {
     value: Object.keys(options),
+  },
+};
+
+// Reproduces the reported bug where SVG icons overflow their (square)
+// container. Each SVG is much larger than the icon slot and has a
+// different aspect ratio so we can see how width vs. height are constrained.
+const overflowOptions = {
+  church_baptism: {
+    label: 'Baptism',
+    description: 'The group is baptising.',
+    icon: '/groups/baptism-2.svg',
+  },
+  church_bible: {
+    label: 'Bible Study',
+    description: 'The group is studying the bible.',
+    icon: '/groups/word-2.svg',
+  },
+  church_communion: {
+    label: 'Communion',
+    description: 'The group is practicing communion.',
+    icon: '/groups/communion-2.svg',
+  },
+  wide_icon: {
+    label: 'Wide SVG',
+    description: 'An oversized wide (400x100) SVG icon.',
+    icon: wideSvg,
+  },
+  tall_icon: {
+    label: 'Tall SVG',
+    description: 'An oversized tall (100x400) SVG icon.',
+    icon: tallSvg,
+  },
+  square_icon: {
+    label: 'Square SVG',
+    description: 'An oversized square (500x500) SVG icon.',
+    icon: squareSvg,
+  },
+};
+
+export const SvgIconSizes = {
+  args: {
+    options: overflowOptions,
+    value: ['wide_icon', 'tall_icon', 'square_icon'],
   },
 };
 
