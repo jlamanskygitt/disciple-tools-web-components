@@ -55,8 +55,18 @@ export class DtTextArea extends DtFormBase {
           resize: none;
           width: 100%;
         }
-        input:disabled,
-        input[readonly],
+        textarea:disabled,
+        textarea::placeholder {
+          color: var(
+            --dt-textarea-placeholder-color,
+            var(--dt-form-placeholder-color, #999)
+          );
+          text-transform: var(--dt-textarea-placeholder-transform, none);
+          font-size: var(--dt-textarea-placeholder-font-size, 1rem);
+          font-weight: var(--dt-textarea-placeholder-font-weight, 400);
+          letter-spacing: var(--dt-textarea-placeholder-letter-spacing, normal);
+        }
+        textarea[readonly],
         textarea:disabled,
         textarea[readonly] {
           background-color: var(
@@ -81,6 +91,8 @@ export class DtTextArea extends DtFormBase {
       ...super.properties,
       /** Element ID */
       id: { type: String },
+      /** Placeholder displayed when no value is entered */
+      placeholder: { type: String },
       /** Value of field. Reflected back to attribute in order to select from DOM if needed. */
       value: {
         type: String,
@@ -150,6 +162,7 @@ export class DtTextArea extends DtFormBase {
         <textarea
           id="${this.id}"
           name="${this.name}"
+          placeholder="${this.placeholder}"
           aria-label="${this.label}"
           ?disabled=${this.disabled}
           ?required=${this.required}
