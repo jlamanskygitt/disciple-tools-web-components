@@ -61,6 +61,13 @@ export class DtMultiSelect extends HasOptionsList(DtFormBase) {
             --dt-multi-select-text-color,
             var(--dt-form-text-color, #0a0a0a)
           );
+          box-shadow: var(
+            --dt-text-box-shadow,
+            var(
+              --dt-form-input-box-shadow,
+              inset 0 1px 2px hsl(0deg 0% 4% / 10%)
+            )
+          );
           font-size: 1rem;
           font-weight: 300;
           min-height: 2.5rem;
@@ -156,7 +163,6 @@ export class DtMultiSelect extends HasOptionsList(DtFormBase) {
           min-width: 50px;
           flex-basis: 50px;
           border: 0;
-          margin-block-start: 0.375rem;
           font-family: inherit;
           font-size: inherit;
         }
