@@ -62,7 +62,7 @@ export class DtMultiSelect extends HasOptionsList(DtFormBase) {
             var(--dt-form-text-color, #0a0a0a)
           );
           box-shadow: var(
-            --dt-text-box-shadow,
+            --dt-multi-select-box-shadow,
             var(
               --dt-form-input-box-shadow,
               inset 0 1px 2px hsl(0deg 0% 4% / 10%)
